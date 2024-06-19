@@ -1,30 +1,39 @@
-# React + TypeScript + Vite
+### Краткое описание
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Это приложение использует [Star Wars API](https://swapi.dev/)) для получения и отображения планет в виде кнопок. При 
+нажатии на кнопку планеты отображается список персонажей из фильмов, в которых появляется выбранная планета.
 
-Currently, two official plugins are available:
+### Установка
+Пошаговый процесс установки проекта:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this//.:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+#### 1. Клонируйте репозиторий
+```
+git clone https://github.com/drapkinamaria/sber-task.git
+```
+#### 2. Перейдите в каталог проекта
+```
+cd sber-task
+```
+#### 3. Установите необходимые пакеты
+```
+npm install
+```
+#### 4. Запустите проект
+```
+npm run dev
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+### Структура проекта
+Описание того, что содержится в каждом из основных каталогов
+
+- /components - Папка для React компонентов
+- /store - Redux store, actions и reducers
+- /pages - React компоненты, представляющие страницы приложения
+- /types - Типы переменных
+- /sagas - Redux Saga файлы
+
+### Сделано с использованием
+-React: Фронтенд-библиотека для построения пользовательских интерфейсов.
+-Redux Toolkit: Упрощает работу с Redux
+-Redux Saga: Управляет побочными эффектами
+-Bootstrap: Фреймворк для стилизации

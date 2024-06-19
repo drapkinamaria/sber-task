@@ -7,10 +7,10 @@ import { PlanetList } from "../components/planet-list";
 import { Planet } from "../types/types";
 import { planetsFetchRequested } from "../store/planetsReducer";
 import { charactersFetchRequested, charactersReset } from "../store/charactersReducer";
-import {Pagination} from "../components/pagination";
+import { Pagination } from "../components/pagination";
 import "../index.css";
 
-export function App() {
+export function MainPage() {
     const dispatch = useDispatch();
     const { planetsRequest, loading: loadingPlanets, error: errorPlanets } = useSelector((state: RootState) => state.planets);
     const { characters, activePlanet, loading: loadingCharacters, error: errorCharacters } = useSelector((state: RootState) => state.characters);
@@ -43,7 +43,11 @@ export function App() {
                 <>
                     {errorCharacters && <p className="alert alert-danger" role="alert">Error fetching characters and films: {errorCharacters}</p>}
                     {activePlanet && <h3 className="ml-3">Films for {activePlanet}</h3>}
-                    <FilmsWithCharacters filmsWithCharacters={characters} />
+                    {characters.length === 0 ? (
+                        <p className="alert alert-info" role="alert">No films</p>
+                    ) : (
+                        <FilmsWithCharacters filmsWithCharacters={characters} />
+                    )}
                     <Pagination
                         next={!!planetsRequest.next}
                         previous={!!planetsRequest.previous}
