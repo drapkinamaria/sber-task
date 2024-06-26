@@ -38,7 +38,7 @@ export function MainPage() {
   }
 
   function handlePagination(next: boolean) {
-    dispatch(charactersReset()); // Reset characters state
+    dispatch(charactersReset());
     setPageNumber((prevPageNumber) =>
       next ? prevPageNumber + 1 : prevPageNumber - 1,
     );
